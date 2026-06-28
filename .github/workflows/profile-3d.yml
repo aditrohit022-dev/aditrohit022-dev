@@ -5,6 +5,9 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch: # Allows you to run it manually
 
+permissions:
+  contents: write # Grants permission to upload the images
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,3 +25,4 @@ jobs:
           git add -A  -_-
           git commit -m "Update 3D contribution profile graph" || exit 0
           git push
+          
